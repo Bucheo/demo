@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -32,6 +33,7 @@ public class BlogController {
 
     @GetMapping("/article_edit/{id}") // 게시판 링크 지정
     public String article_edit(Model model, @PathVariable Long id) {
+        //@ControllerAdvice
         Optional<Article> list = blogService.findById(id); // 선택한 게시판 글
         if (list.isPresent()) {
             model.addAttribute("article", list.get()); // 존재하면 Article 객체를 모델에 추가
