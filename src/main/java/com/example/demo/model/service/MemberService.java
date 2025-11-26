@@ -37,7 +37,7 @@ public class MemberService {
         return memberRepository.save(request.toEntity());
     }
 
-    public Member loginCheck(String email, String rawPassword) {
+    public Member loginCheck(String email, CharSequence rawPassword) {
         Member member = memberRepository.findByEmail(email); // 이메일 조회
         if (member == null) {
             throw new IllegalArgumentException("등록되지 않은 이메일입니다.");

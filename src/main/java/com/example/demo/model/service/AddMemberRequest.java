@@ -19,7 +19,7 @@ public class AddMemberRequest {
                 .mobile(mobile)
                 .address(address)
                 .build();
-    }s
+    }
 
     public void setPassword(String encodedPassword) {
         // TODO Auto-generated method stub
