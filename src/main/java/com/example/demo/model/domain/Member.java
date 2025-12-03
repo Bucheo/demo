@@ -3,6 +3,7 @@ import lombok.*; // 어노테이션 자동 생성
 import jakarta.persistence.*; // 기존 javax 후속 버전
 
 @Getter // setter는 없음(무분별한 변경 x)
+@NoArgsConstructor(access = AccessLevel.PROTECTED) // 외부 생성자 접근 방지
 @Entity // 아래 객체와 DB 테이블을 매핑. JPA가 관리
 @Table(name = "member") // 테이블 이름을 지정. 없는 경우 클래스이름으로 설정
 public class Member {

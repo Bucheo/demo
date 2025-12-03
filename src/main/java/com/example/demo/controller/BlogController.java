@@ -19,6 +19,8 @@ import com.example.demo.model.domain.Board;
 import com.example.demo.model.service.AddArticleRequest;
 import com.example.demo.model.service.BlogService;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller // 컨트롤러 어노테이션 명시
 public class BlogController {
     @Autowired
@@ -57,15 +59,22 @@ public class BlogController {
         return "redirect:/article_list";
     }
 
-    //@GetMapping("/board_list") // 새로운 게시판 링크 지정
-    //public String board_list(Model model) {
-    //    List<Board> list = blogService.findAll(); // 게시판 전체 리스트, 기존 Article에서 Board로
-    //    model.addAttribute("boards", list); // 모델에 추가
-    //    return "board_list"; // .HTML 연결
-    //}
+    // @GetMapping("/board_list") // 새로운 게시판 링크 지정
+    // public String board_list(Model model) {
+    // List<Board> list = blogService.findAll(); // 게시판 전체 리스트, 기존 Article에서 Board로
+    // model.addAttribute("boards", list); // 모델에 추가
+    // return "board_list"; // .HTML 연결
+    // }
 
     @GetMapping("/board_list") // 새로운 게시판 링크 지정
-    public String board_list(Model model, @RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "") String keyword) {
+    public String board_list(Model model, @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "") String keyword, HttpSession session) { // 세션 객체 전달
+        String userId = (String) session.getAttribute("userId"); // 세션 아이디 존재 확인
+        if (userId == null) {
+            return "redirect:/member_login"; // 로그인 페이지로 리다이렉션
+        }
+        System.out.println("세션 userId: " + userId); // 서버 IDE 터미널에 세션 값 출력) {
+        
         PageRequest pageable = PageRequest.of(page, 10); // 한 페이지의 게시글 수
         Page<Board> list; // Page를 반환
         if (keyword.isEmpty()) {
