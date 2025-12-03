@@ -11,7 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.model.domain.Board;
 import com.example.demo.model.domain.Member;
-import com.example.demo.model.repository.BoardRepository;
 import com.example.demo.model.repository.MemberRepository;
 
 import lombok.RequiredArgsConstructor;
