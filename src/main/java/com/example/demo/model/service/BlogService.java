@@ -65,5 +65,10 @@ public class BlogService {
 
     public Page<Board> searchByKeyword(String keyword, Pageable pageable) {
         return blogRepository.findByTitleContainingIgnoreCase(keyword, pageable);
+    }
+
+    public void update(Long id, AddArticleRequest request) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'update'");
     } // LIKE 검색 제공(대소문자 무시)
 }
