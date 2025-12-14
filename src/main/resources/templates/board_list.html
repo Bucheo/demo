@@ -29,12 +29,13 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>번호</th>
                     <th>제목</th>
                     <th>작성자</th>
                     <th>작성일</th>
                     <th>조회수</th>
                     <th>좋아요</th>
+                    <th>관리</th>
                 </tr>
             </thead>
             <tbody>
@@ -51,14 +52,18 @@
                     <td th:text="${board.likec}"></td>
 
                     <td>
-                        <!-- 수정/삭제 버튼 -->
-                        <a class="btn btn-warning" th:href="@{/board_view/{id}(id=${board.id})}">수정</a>
-                        <!-- 삭제 버튼 -->
-                        <form th:action="@{/api/article_delete/{id}(id=${board.id})}" method="post"
-                            style="display:inline;">
-                            <input type="hidden" name="_method" value="delete">
-                            <button type="submit" class="btn btn-danger">삭제</button>
-                        </form>
+                        <!-- 로그인한 사용자와 작성자가 같을 때만 수정/삭제 버튼 표시 -->
+                        <div th:if="${userName == board.user}">
+                            <a class="btn btn-sm btn-warning" th:href="@{/board_edit/{id}(id=${board.id})}">수정</a>
+                            <form th:action="@{/api/article_delete/{id}(id=${board.id})}" method="post"
+                                style="display:inline;">
+                                <input type="hidden" name="_method" value="delete">
+                                <button type="submit" class="btn btn-sm btn-danger" 
+                                        onclick="return confirm('정말 삭제하시겠습니까?')">삭제</button>
+                            </form>
+                        </div>
+                        <!-- 작성자가 다를 경우 아무것도 표시하지 않음 -->
+                        <span th:unless="${userName == board.user}" class="text-muted">-</span>
                     </td>
                 </tr>
             </tbody>
@@ -68,7 +73,7 @@
         <table class="table table-bordered">
             <tbody>
                 <tr>
-                    <td><!-- 글쓰기 버튼 -->
+                    <td>
                         <a class="btn btn-warning" th:href="@{/board_write}">글쓰기</a>
                     </td>
                 </tr>
@@ -95,7 +100,6 @@
                 </li>
             </ul>
         </nav>
-    </div>
     </div>
 </body>
 
