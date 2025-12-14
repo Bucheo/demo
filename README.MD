@@ -1,11 +1,11 @@
 # 🌱 JAVA 웹 프로젝트 포트폴리오
 
-20210916 박지호 자바웹프로그래밍2 수업을 진행했습니다.🎉
+20210916 박지호 자바웹프로그래밍2 수업을 진행했습니다.
 
-## 🛠 기술 스택
+## 기술 스택
 
 ### Backend
-- ![Spring](https://img.shields.io/badge/-Spring-6DB33F?style=flat-square&logo=spring&logoColor=white) Spring Boot 2.7.x
+- ![Spring](https://img.shields.io/badge/-Spring-6DB33F?style=flat-square&logo=spring&logoColor=white) Spring Boot 3.5.x
 - ![JPA](https://img.shields.io/badge/-JPA-59666C?style=flat-square&logo=hibernate&logoColor=white) Spring Data JPA
 - ![Security](https://img.shields.io/badge/-Spring%20Security-6DB33F?style=flat-square&logo=springsecurity&logoColor=white) Spring Security
 - ![MySQL](https://img.shields.io/badge/-MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white) MySQL 8.0
@@ -19,20 +19,20 @@
 - ![Git](https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white) Git
 - ![Maven](https://img.shields.io/badge/-Maven-C71A36?style=flat-square&logo=apachemaven&logoColor=white) Maven
 
-## 📚 개발 진행 상황
+## 개발 진행 상황
 
-### 2주차 - 개발 환경 구축 🔧
+### 2주차 - 개발 환경 구축
 - Spring Boot 프로젝트 초기 설정 완료
 - Hello World 페이지 구현 및 컨트롤러 매핑 완료
-- ✨ 추가 구현: URL 맵핑과 컨트롤러 추가 완료
-> 💡 **느낀점**: 처음 Spring Boot 환경을 구축하면서 의존성 관리의 중요성을 깨달았습니다.
-> ⚡ **도전과제**: 버전 호환성 문제 해결이 까다로웠지만, Maven을 통한 효율적인 관리 방법을 습득했습니다.
+- 추가 구현: URL 맵핑과 컨트롤러 추가 완료
+> **느낀점**: 처음 Spring Boot 환경을 구축하면서 의존성 관리의 중요성을 깨달았습니다.
+> **도전과제**: 버전 호환성 문제 해결이 까다로웠지만, Maven을 통한 효율적인 관리 방법을 습득했습니다.
 <details>
   <summary>2주차 이미지</summary>
   <img src="image-3.png" alt="2주차_환경구축">
 </details>
 
-### 3주차 - 포트폴리오 페이지 개발 🎨
+### 3주차 - 포트폴리오 페이지 개발 
 - 개인 포트폴리오 템플릿 커스터마이징
 - 상세 페이지 제작 및 JavaScript confirm 기능 구현
 - ✨ 추가 구현: 상세 페이지 수정 완료!(confirmClose()함수 추가)
